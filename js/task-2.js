@@ -4,15 +4,16 @@ class Storage {
     this.#items = items;
   }
   getItems() {
-    this.Storage = [];
+    return this.#items;
   }
   addItem(newItem) {
-    this.newItem = newItem;
-    return this.#items.push(newItem);
+    this.#items.push(newItem);
   }
   removeItem(itemToRemove) {
-    this.itemToRemove = itemToRemove;
-    return this.#items.slice(itemToRemove);
+    const itemIndex = this.#items.indexOf(itemToRemove);
+    if (itemIndex !== -1) {
+      this.#items.slice(itemToRemove);
+    }
   }
 }
 
